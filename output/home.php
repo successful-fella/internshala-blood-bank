@@ -48,7 +48,7 @@
 
 			<div class="section color-section">
 				<div class="container">
-						<h3 class="title">Hospitals Serving With Us</h3>
+						<h3 class="title">Hospitals With Us</h3>
 						<div class="row text-center">
 
 							<div class="col-md-4 col-lg-4">
