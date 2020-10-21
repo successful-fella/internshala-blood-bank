@@ -31,8 +31,9 @@
 						$this->actualSignin();
 						break;
 					case 'signup':
+						$file = "";
 						if(!empty($_FILES['file']['name'])) {
-							$this->Hospital_model->uploadImage();
+							$file = $this->Hospital_model->uploadImage();
 						}
 						echo "1";
 						break;
