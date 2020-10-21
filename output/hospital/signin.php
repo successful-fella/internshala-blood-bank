@@ -10,13 +10,13 @@
 		<div class="wrapper">
 
 			<div class="page-header clear-filter" filter-color="orange">
-				<div class="page-header-image" style="background-image:url(assets/img/bglogin.jpg)"></div>
+				<div class="page-header-image" style="background-image:url(assets/img/bghospital.webp)"></div>
 				<div class="content">
 					<div class="container">
 						<div class="col-md-4 ml-auto mr-auto">
 							<div class="card card-login card-plain">
 								<div class="card-header text-center">
-									<h3 id="head-text">Sign in/Sign up as Receiver</h3>
+									<h3 id="head-text">Sign in/Sign up as Hospital</h3>
 								</div>
 								<div class="alert" role="alert" id="alert" style="display: none"></div>
 								<div class="card-body" id="form-interface">
@@ -33,7 +33,7 @@
 								<div class="card-footer text-center">
 									<div class="pull-left">
 										<h6>
-											<a href="sign-in/hospital" class="link">Sign in as Hospital</a>
+											<a href="sign-in/hospital" class="link">Sign in as Receiver</a>
 										</h6>
 									</div>
 									<div class="pull-right">
@@ -119,23 +119,31 @@
 				const name = $('#form-name').val()
 				const address = $('#form-address').val()
 				const password = $('#form-password').val()
+				const files = $('#form-file')[0].files
 				if(password == '' || name == '' || address == '') {
 					$('#alert').toggleClass('alert-danger').html('Please fill in the form').slideDown()
 					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
 					return;
 				}
 				$('#form-btn').prop('disabled', true).html('Please wait...')
+				const fd = new FormData();
+				fd.append('name', name)
+				fd.append('email', email)
+				fd.append('address', address)
+				fd.append('file', files[0])
+				fd.append('action', 'signup')
 				$.ajax({
 					url: window.location.href,
 					type: "POST",
-					data: {
-						name: name,
-						email: email,
-						address: address,
-						password: password,
-						action: 'signup'
-					},
+					data: fd,
+					contentType: false,
+              		processData: false,
 					success: (resp) => {
+						if(resp == 0) {
+							$('#alert').toggleClass('alert-danger').html('Image extension/size limit crossed.').slideDown()
+							setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+							return
+						}
 						$('#alert').toggleClass('alert-success').html('Taking you in...').slideDown()
 						window.location.reload()
 					},

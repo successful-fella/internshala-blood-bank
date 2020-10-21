@@ -9,3 +9,4 @@
 	# Custom routes
 	$route['sign-in/hospital'] = "hospital/signin";
 	$route['sign-in/receiver'] = "receiver/signin";
+	$route['request-blood'] = "receiver/requestBlood";
