@@ -35,42 +35,6 @@
 				</div>
 			</div>
 
-			<div class="section">
-				<div class="container">
-					<h3 class="title">Internshala Blood Bank Goal</h3>
-					<h5 class="description">
-						<code>Internshala is a dot com business with the 💖 of dot org</code>
-						<br><br>
-						We are helping everyone in need of blood samples to connect with various hospitals. The hospitals will act on your request as quick as possible and deliver you the blood sample. 🙂 
-					</h5>
-				</div>
-			</div>
-
-			<div class="section color-section">
-				<div class="container">
-						<h3 class="title">Hospitals With Us</h3>
-						<div class="row text-center">
-
-							<div class="col-md-4 col-lg-4">
-								<div class="card">
-									<img class="card-img-top" src="...">
-									<div class="card-body">
-										<p class="card-title">Hospital Name</p>
-										<p class="text-muted">Address</p>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="row justify-content-center">
-							<a href="sign-in/hospital">
-								<button class="btn btn-primary btn-lg btn-round">Sign Up as an Hospital</button>
-							</a>
-						</div>
-					</div>
-
-				</div>
-			</div>
 
 			<div class="section">
 				<div class="container">
@@ -109,10 +73,43 @@
 					</div>
 
 				</div>
-
 			</div>
 
-		</div>
+
+			<div class="section color-section">
+				<div class="container">
+					<h3 class="title">Hospitals With Us</h3>
+					<div class="row text-center">
+
+						<div class="col-md-4 col-lg-4">
+							<div class="card">
+								<img class="card-img-top" src="...">
+								<div class="card-body">
+									<p class="card-title">Hospital Name</p>
+									<p class="text-muted">Address</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="row justify-content-center">
+						<a href="sign-in/hospital">
+							<button class="btn btn-primary btn-lg btn-round">Sign Up as an Hospital</button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="container">
+					<h3 class="title">Internshala Blood Bank Goal</h3>
+					<h5 class="description">
+						<code>Internshala is a dot com business with the 💖 of dot org</code>
+						<br><br>
+						We are helping everyone in need of blood samples to connect with various hospitals. The hospitals will act on your request as quick as possible and deliver you the blood sample. 🙂 
+					</h5>
+				</div>
+			</div>
 			
 			<?php $this->load->view('components/footer') ?>
 
