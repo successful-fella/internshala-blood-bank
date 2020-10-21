@@ -9,4 +9,6 @@
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/now-ui-kit.css?v=1.3.1" rel="stylesheet" />
 	<link  href="assets/css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/pace.css">
+	<script src="assets/js/pace.min.js"></script>
 </head>

@@ -274,3 +274,13 @@ function debounce(func, wait, immediate) {
     if (immediate && !timeout) func.apply(context, args);
   };
 };
+
+// Custom
+Pace.options = {
+	ajax: true,
+	restartOnRequestAfter: 1
+}
+$(window).on('beforeunload', () => {
+	Pace.restart()
+	Pace.start()
+})
