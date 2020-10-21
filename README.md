@@ -1,5 +1,14 @@
 # internshala-blood-bank
 
+## Packages Used
+- Bootstrap 4
+- Now UI Kit
+- jQuery
+- Pace JS
+- Popper JS
+- Montserrat Google Font
+- Fontawesome Icons
+
 ## Design a simple 'Blood bank' web application
 
 Assume you are designing a real-life system, that will be used by real users.

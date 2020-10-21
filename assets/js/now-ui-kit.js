@@ -62,18 +62,6 @@ $(document).ready(function() {
     $(this).parent(".input-group").removeClass("input-group-focus");
   });
 
-  // Activate bootstrapSwitch
-  $('.bootstrap-switch').each(function() {
-    $this = $(this);
-    data_on_label = $this.data('on-label') || '';
-    data_off_label = $this.data('off-label') || '';
-
-    $this.bootstrapSwitch({
-      onText: data_on_label,
-      offText: data_off_label
-    });
-  });
-
   if ($(window).width() >= 992) {
     big_image = $('.page-header-image[data-parallax="true"]');
 
@@ -83,24 +71,6 @@ $(document).ready(function() {
   // Activate Carousel
   $('.carousel').carousel({
     interval: 4000
-  });
-
-  $('.date-picker').each(function() {
-    $(this).datepicker({
-      templates: {
-        leftArrow: '<i class="now-ui-icons arrows-1_minimal-left"></i>',
-        rightArrow: '<i class="now-ui-icons arrows-1_minimal-right"></i>'
-      }
-    }).on('show', function() {
-      $('.datepicker').addClass('open');
-
-      datepicker_color = $(this).data('datepicker-color');
-      if (datepicker_color.length != 0) {
-        $('.datepicker').addClass('datepicker-' + datepicker_color + '');
-      }
-    }).on('hide', function() {
-      $('.datepicker').removeClass('open');
-    });
   });
 
 
@@ -211,31 +181,6 @@ nowuiKit = {
           .removeClass('has-image');
       }
     }
-  },
-
-  initSliders: function() {
-    // Sliders for demo purpose in refine cards section
-    var slider = document.getElementById('sliderRegular');
-
-    noUiSlider.create(slider, {
-      start: 40,
-      connect: [true, false],
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-
-    var slider2 = document.getElementById('sliderDouble');
-
-    noUiSlider.create(slider2, {
-      start: [20, 60],
-      connect: true,
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
   }
 }
 
@@ -274,6 +219,7 @@ function debounce(func, wait, immediate) {
     if (immediate && !timeout) func.apply(context, args);
   };
 };
+
 
 // Custom
 Pace.options = {
