@@ -45,6 +45,7 @@ only. Please make sure you include the SQL file so that we can replicate your da
 - Popper JS
 - Montserrat Google Font
 - Fontawesome Icons
+- CodeIgniter
 
 
 ## Setup
