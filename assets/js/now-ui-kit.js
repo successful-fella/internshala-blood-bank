@@ -220,6 +220,7 @@ function debounce(func, wait, immediate) {
   };
 };
 
+
 // Custom
 Pace.options = {
 	ajax: true,
