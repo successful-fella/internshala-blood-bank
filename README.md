@@ -1,15 +1,6 @@
 # internshala-blood-bank
 
-## Packages Used
-- Bootstrap 4
-- Now UI Kit
-- jQuery
-- Pace JS
-- Popper JS
-- Montserrat Google Font
-- Fontawesome Icons
-
-## Design a simple 'Blood bank' web application
+## Task - Design a simple 'Blood bank' web application
 
 Assume you are designing a real-life system, that will be used by real users.
 
@@ -44,3 +35,21 @@ Neat & simple design Good database architecture Good coding practices (write rea
 **How to send:**
 Please zip the assignment, upload on google drive and share the (publicly accessible) google drive link
 only. Please make sure you include the SQL file so that we can replicate your database.
+
+
+## Packages Used
+- Bootstrap 4
+- Now UI Kit
+- jQuery
+- Pace JS
+- Popper JS
+- Montserrat Google Font
+- Fontawesome Icons
+
+
+## Setup
+Clone the repository. Import blood-bank.sql, it will create new database with tables and populate some data. Default database username:password is set to root with password blank. To set database configurations go to bloodbank_app>config>database.php and update the values.
+
+
+## Notes
+> Since it says assume that it will be used by real people, I wanted to add edit profile, forgot password types feature which I didn't implemented since this is a demo assignment.
