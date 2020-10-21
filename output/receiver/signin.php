@@ -53,8 +53,11 @@
 		<?php $this->load->view('components/scripts') ?>
 
 		<script type="text/javascript">
+			var email = ''
+
 			const signin = () => {
-				if(!/\S+@\S+\.\S+/.test($('#form-email').val())) {
+				email = $('#form-email').val()
+				if(!/\S+@\S+\.\S+/.test(email)) {
 					$('#alert').toggleClass('alert-danger').html('Please enter an Email ID').slideDown()
 					$('#form-email').focus()
 					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
@@ -65,10 +68,76 @@
 					url: window.location.href,
 					type: "POST",
 					data: {
-						email: $('#form-email').val()
+						email: email,
+						action: 'next'
 					},
 					success: (resp) => {
 						$('#form-interface').html(resp)
+					},
+					error: () => {
+						alert('There was some error processing request, try again')
+						window.location.reload()
+					}
+				})
+			}
+
+			const actual_signin = () => {
+				var password = $('#form-password').val()
+				if(password == '') {
+					$('#alert').toggleClass('alert-danger').html('Please enter a Password').slideDown()
+					$('#form-password').focus()
+					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+					return;
+				}
+				$('#form-btn').prop('disabled', true).html('Please wait...')
+				$.ajax({
+					url: window.location.href,
+					type: "POST",
+					data: {
+						email: email,
+						password: password,
+						action: 'signin'
+					},
+					success: (resp) => {
+						if(resp == 1) {
+							$('#alert').toggleClass('alert-success').html('Taking you in...').slideDown()
+							window.location.reload()
+						} else {
+							$('#alert').toggleClass('alert-danger').html('Invalid Password').slideDown()
+							setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+							$('#form-btn').prop('disabled', false).html('Try again...')
+						}
+					},
+					error: () => {
+						alert('There was some error processing request, try again')
+						window.location.reload()
+					}
+				})
+			}
+
+			const signup = () => {
+				var name = $('#form-name').val()
+				var address = $('#form-address').val()
+				var password = $('#form-password').val()
+				if(password == '' || name == '' || address == '') {
+					$('#alert').toggleClass('alert-danger').html('Please fill in the form').slideDown()
+					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+					return;
+				}
+				$('#form-btn').prop('disabled', true).html('Please wait...')
+				$.ajax({
+					url: window.location.href,
+					type: "POST",
+					data: {
+						name: name,
+						email: email,
+						address: address,
+						password: password,
+						action: 'signup'
+					},
+					success: (resp) => {
+						$('#alert').toggleClass('alert-success').html('Taking you in...').slideDown()
+						window.location.reload()
 					},
 					error: () => {
 						alert('There was some error processing request, try again')

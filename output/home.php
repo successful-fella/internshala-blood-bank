@@ -38,7 +38,7 @@
 
 			<div class="section">
 				<div class="container">
-					<h3 class="title">How it goes?</h3>
+					<h3 class="title">How it Goes?</h3>
 					<div class="card card-nav-tabs card-plain">
 						<div class="card-header card-header-primary">
 							<div class="nav-tabs-navigation">
