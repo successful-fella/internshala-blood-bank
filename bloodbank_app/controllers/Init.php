@@ -6,8 +6,7 @@
 	{
 
 		public function index() {
-			echo base_url();
-			$this->load->view('welcome_message');
+			$this->load->view('home');
 		}
 
 	}
