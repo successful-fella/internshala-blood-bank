@@ -16,8 +16,12 @@
 				<li class="nav-item">
 					<a class="nav-link" href="request-blood">Request Blood</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="sign-in">Sign In/Sign Up</a>
+				<li class="nav-item nav-link dropdown" style="cursor: pointer;">
+					<span id="signin-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In/Sign Up</span>
+					<div class="dropdown-menu" aria-labelledby="signin-button">
+						<a class="dropdown-item" href="sign-in/receiver">As a Receiver</a>
+						<a class="dropdown-item" href="sign-in/hospital">As an Hospital</a>
+					</div>
 				</li>
 			</ul>
 		</div>
