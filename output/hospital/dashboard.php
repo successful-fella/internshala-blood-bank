@@ -96,6 +96,43 @@
 					},
 					error: () => {
 						alert('There was some problem fetching list. Please try again')
+						// window.location.reload()
+					}
+				})
+			}
+
+			const addSample = () => {
+				const title = $('#form-name').val()
+				if(title == '') {
+					$('#alert').toggleClass('alert-danger').html('Please enter a blood sample title').slideDown()
+					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+					$('#form-name').focus()
+					return
+				}
+				$('#add-btn').prop('disabled', true).html('Adding...')
+				$.ajax({
+					url: window.location.href,
+					type: "POST",
+					data: {
+						title: title,
+						type: $('#form-type').val(),
+						rhd: $('#form-rhd').val(),
+						action: 'add'
+					},
+					success: (resp) => {
+						if(resp == 1) {
+							$('#form-name').val('')
+							$('#alert').toggleClass('alert-success').html('Sample Added!').slideDown()
+							setTimeout(() => $('#alert').toggleClass('alert-success').slideUp(), 3000)
+							$('#add-btn').prop('disabled', false).html('Add Another')
+						} else {
+							$('#alert').toggleClass('alert-danger').html('Something went wrong...').slideDown()
+							setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
+							$('#add-btn').prop('disabled', false).html('Try Again')
+						}
+					},
+					error: (resp) => {
+						alert('Something went wrong... try again')
 						window.location.reload()
 					}
 				})

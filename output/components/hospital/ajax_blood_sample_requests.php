@@ -11,28 +11,24 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1.</td>
-				<td>Kawalpreet</td>
-				<td>KP Ka blood sample</td>
-				<td>B+</td>
-				<td>20/02/19</td>
-				<td>
-					<i class="text-info fa fa-check"></i> &nbsp;
-					<i class="text-danger fa fa-trash"></i>
-				</td>
-			</tr>
-			<tr>
-				<td>1.</td>
-				<td>Kawalpreet</td>
-				<td>KP Ka blood sample</td>
-				<td>B+</td>
-				<td>20/02/19</td>
-				<td>
-					<i class="text-info fa fa-check" onclick="confirmRequest(1)" style="cursor: pointer;"></i> &nbsp;
-					<i class="text-danger fa fa-trash" onclick="deleteRequest(1)" style="cursor: pointer;"></i>
-				</td>
-			</tr>
+			<?php if(empty($requests)): ?>
+				<tr>
+					<td colspan="6">Nothing to show :(</td>
+				</tr>
+			<?php endif; ?>
+			<?php $sr=1; foreach($requests as $request): ?>
+				<tr>
+					<td><?= $sr ?>.</td>
+					<td><?= $request->receiver_name ?></td>
+					<td><?= $request->sample_name ?></td>
+					<td><?= $request->sample_type . $request->sample_rhd ?></td>
+					<td><?= date_format(date_create($request->date_added), 'd/m/Y') ?></td>
+					<td>
+						<i class="text-info fa fa-check" onclick="notIncluded()" style="cursor: pointer;"></i> &nbsp;
+						<i class="text-danger fa fa-trash" onclick="notIncluded()" style="cursor: pointer;"></i>
+					</td>
+				</tr>
+			<?php $sr++; endforeach; ?>
 		</tbody>
 	</table>
 </div>

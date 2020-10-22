@@ -31,7 +31,7 @@
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-primary btn-round btn-lg">Add Blood Sample</button>
+			<button class="btn btn-primary btn-round btn-lg" onclick="addSample()" id="add-btn">Add Blood Sample</button>
 		</div>
 	</div>
 </div>

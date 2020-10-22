@@ -58,7 +58,7 @@
 				return;
 			}
 			if($this->Hospital_model->signedIn()) {
-				redirect('/');
+				redirect('hospital/dashboard');
 				return;
 			}
 			$this->load->view('hospital/signin');
@@ -69,15 +69,33 @@
 
 		#################### Dashboard #######################
 
-		function listBloodSamples() {
-			$this->load->view('components/hospital/ajax_blood_sample_list');
+		private function listBloodSamples() {
+			$this->load->model('Samples_model');
+			$data['samples'] = $this->Samples_model->getAllByHospital($this->session->kp_hospital);
+			$this->load->view('components/hospital/ajax_blood_sample_list', $data);
 		}
 
-		function listRequest() {
-			$this->load->view('components/hospital/ajax_blood_sample_requests');
+		private function listRequest() {
+			$this->load->model('Request_model');
+			$data['requests'] = $this->Request_model->getAllByHospital($this->session->kp_hospital);
+			$this->load->view('components/hospital/ajax_blood_sample_requests', $data);
+		}
+
+		private function addBloodSample() {
+			$hospital_id = $this->session->kp_hospital;
+			$name = strip_tags($this->input->post('title'));
+			$type = strip_tags($this->input->post('type'));
+			$rhd = strip_tags($this->input->post('rhd'));
+			$this->load->model('Samples_model');
+			$success = $this->Samples_model->add($hospital_id, $name, $type, $rhd);
+			echo ($success) ? '1':'0';
 		}
 
 		function dashboard() {
+			if(!$this->Hospital_model->signedIn()) {
+				redirect('sign-in/hospital');
+				return;
+			}
 			if($_SERVER['REQUEST_METHOD'] === "POST") {
 				switch ($this->input->post('action')) {
 					case 'list':
@@ -85,6 +103,9 @@
 						break;
 					case 'requests':
 						$this->listRequest();
+						break;
+					case 'add':
+						$this->addBloodSample();
 						break;
 				}
 				return;

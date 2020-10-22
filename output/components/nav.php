@@ -21,7 +21,6 @@
 						<div class="nav-link dropdown">
 							<span id="welcome-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?= $this->session->kp_receiver_name ?></span>
 							<div class="dropdown-menu" aria-labelledby="welcome-button">
-								<!-- More receiver related options -->
 								<a class="dropdown-item" href="sign-out">Sign Out</a>
 							</div>
 						</div>
@@ -31,6 +30,7 @@
 						<div class="nav-link dropdown">
 							<span id="welcome-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?= $this->session->kp_hospital_name ?></span>
 							<div class="dropdown-menu" aria-labelledby="welcome-button">
+								<a class="dropdown-item" href="hospital/dashboard">Dashboard</a>
 								<a class="dropdown-item" href="sign-out">Sign Out</a>
 							</div>
 						</div>

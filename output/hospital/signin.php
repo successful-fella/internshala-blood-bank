@@ -38,7 +38,7 @@
 									</div>
 									<div class="pull-right">
 										<h6>
-											<a href="javascript:alert('Not made for demo purpose')" class="link">Forgot Password?</a>
+											<a href="javascript:notIncluded()" class="link">Forgot Password?</a>
 										</h6>
 									</div>
 								</div>
@@ -130,6 +130,7 @@
 				fd.append('name', name)
 				fd.append('email', email)
 				fd.append('address', address)
+				fd.append('password', password)
 				fd.append('file', files[0])
 				fd.append('action', 'signup')
 				$.ajax({

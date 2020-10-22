@@ -230,3 +230,7 @@ $(window).on('beforeunload', () => {
 	Pace.restart()
 	Pace.start()
 })
+
+const notIncluded = () => {
+	alert('Not included in assignment description')
+}

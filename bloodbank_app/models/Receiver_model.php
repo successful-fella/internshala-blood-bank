@@ -67,9 +67,4 @@
 			}
 		}
 
-		# All blood sample requested count, returns an positive integer
-		function getAllRequestedCount() {
-			return $this->db->get('blood_request_tracker')->num_rows();
-		}
-
 	}
