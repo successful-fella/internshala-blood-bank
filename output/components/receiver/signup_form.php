@@ -4,7 +4,7 @@
 	}
 </style>
 
-<h5>Create a New Account for kp@kp.com</h5>
+<h5>Create a New Account for <?= $email ?></h5>
 <div class="input-group no-border input-lg">
 	<div class="input-group-prepend">
 		<span class="input-group-text">
@@ -57,7 +57,7 @@
 			<i class="fa fa-envelope"></i>
 		</span>
 	</div>
-	<input type="email" id="form-email" class="form-control" placeholder="Email" readonly="">
+	<input type="email" id="form-email" class="form-control" value="<?= $email ?>" readonly="">
 </div>
 <div class="input-group no-border input-lg">
 	<div class="input-group-prepend">
@@ -68,7 +68,3 @@
 	<input type="password" id="form-password" class="form-control" placeholder="Password" required="">
 </div>
 <button onclick="signup()" class="btn btn-primary btn-round btn-lg btn-block">Sign Up</button>
-
-<script type="text/javascript">
-	$('#form-email').val(email)
-</script>

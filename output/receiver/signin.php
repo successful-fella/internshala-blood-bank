@@ -38,7 +38,7 @@
 									</div>
 									<div class="pull-right">
 										<h6>
-											<a href="javascript:void(0)" class="link">Forgot Password?</a>
+											<a href="javascript:alert('Not made for demo purpose')" class="link">Forgot Password?</a>
 										</h6>
 									</div>
 								</div>

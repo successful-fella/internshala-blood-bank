@@ -33,12 +33,12 @@
 								<div class="card-footer text-center">
 									<div class="pull-left">
 										<h6>
-											<a href="sign-in/hospital" class="link">Sign in as Receiver</a>
+											<a href="sign-in/receiver" class="link">Sign in as Receiver</a>
 										</h6>
 									</div>
 									<div class="pull-right">
 										<h6>
-											<a href="javascript:void(0)" class="link">Forgot Password?</a>
+											<a href="javascript:alert('Not made for demo purpose')" class="link">Forgot Password?</a>
 										</h6>
 									</div>
 								</div>

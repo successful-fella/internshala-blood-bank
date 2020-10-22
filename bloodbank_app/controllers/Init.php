@@ -5,7 +5,7 @@
 	class Init extends CI_Controller
 	{
 
-		public function index() {
+		function index() {
 			$this->load->model('Samples_model');
 			$this->load->model('Hospital_model');
 			$this->load->model('Receiver_model');
@@ -17,6 +17,11 @@
 			$data['hospitals'] = $this->Hospital_model->getLast(3);
 			
 			$this->load->view('home', $data);
+		}
+
+		function signout() {
+			session_destroy();
+			redirect('/');
 		}
 
 	}

@@ -16,15 +16,36 @@
 				<li class="nav-item">
 					<a class="nav-link" href="request-blood">Request Blood</a>
 				</li>
-				<li class="nav-item">
-					<div class="nav-link dropdown">
-						<span id="signin-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In/Sign Up</span>
-						<div class="dropdown-menu" aria-labelledby="signin-button">
-							<a class="dropdown-item" href="sign-in/receiver">As a Receiver</a>
-							<a class="dropdown-item" href="sign-in/hospital">As an Hospital</a>
+				<?php if($this->session->kp_receiver): ?>
+					<li class="nav-item">
+						<div class="nav-link dropdown">
+							<span id="welcome-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?= $this->session->kp_receiver_name ?></span>
+							<div class="dropdown-menu" aria-labelledby="welcome-button">
+								<!-- More receiver related options -->
+								<a class="dropdown-item" href="sign-out">Sign Out</a>
+							</div>
 						</div>
-					</div>
-				</li>
+					</li>
+				<?php elseif($this->session->kp_hospital): ?>
+					<li class="nav-item">
+						<div class="nav-link dropdown">
+							<span id="welcome-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome <?= $this->session->kp_hospital_name ?></span>
+							<div class="dropdown-menu" aria-labelledby="welcome-button">
+								<a class="dropdown-item" href="sign-out">Sign Out</a>
+							</div>
+						</div>
+					</li>
+				<?php else: ?>
+					<li class="nav-item">
+						<div class="nav-link dropdown">
+							<span id="signin-button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In/Sign Up</span>
+							<div class="dropdown-menu" aria-labelledby="signin-button">
+								<a class="dropdown-item" href="sign-in/receiver">As a Receiver</a>
+								<a class="dropdown-item" href="sign-in/hospital">As an Hospital</a>
+							</div>
+						</div>
+					</li>
+				<?php endif; ?>
 			</ul>
 		</div>
 	</div>

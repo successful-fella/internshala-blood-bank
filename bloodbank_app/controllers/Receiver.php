@@ -7,17 +7,32 @@
 
 		function __construct() {
 			parent::__construct();
+			$this->load->model('Receiver_model');
 		}
 
 
 		############### Signin Page Functions ######################
 
-		function signinNext() {
-			$this->load->view('components/receiver/signup_form');
+		private function signinNext() {
+			$email = $this->input->post('email');
+			if($this->Receiver_model->emailExists($email)) {
+				$this->load->view('components/receiver/signin_form');
+			} else {
+				$this->load->view( 'components/receiver/signup_form', array('email' => $email) );
+			}
 		}
 
-		function actualSignin() {
+		private function actualSignin() {
 			echo "0";
+		}
+
+		private function signUp() {
+			$success = $this->Receiver_model->signUp();
+			if($success) {
+				http_response_code(200);
+			} else {
+				http_response_code(500);
+			}
 		}
 
 		function signin() {
@@ -30,8 +45,13 @@
 						$this->actualSignin();
 						break;
 					case 'signup':
+						$this->signUp();
 						break;
 				}
+				return;
+			}
+			if($this->Receiver_model->signedIn()) {
+				redirect('/');
 				return;
 			}
 			$this->load->view('receiver/signin');
