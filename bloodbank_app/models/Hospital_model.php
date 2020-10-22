@@ -38,6 +38,7 @@
 			} else {
 				$password_hash = $hospital->hospital_password;
 				if(password_verify($password, $password_hash)) {
+					session_destroy();
 					$this->session->set_userdata('kp_hospital', $hospital->hospital_id);
 					$this->session->set_userdata('kp_hospital_name', $hospital->hospital_name);
 					return true;
@@ -64,6 +65,7 @@
 			$success = $this->db->insert('hospital', $data);
 			if($success) {
 				# Temprorary session, I can set permanent using Cookies.
+				session_destroy();
 				$this->session->set_userdata('kp_hospital', $this->db->insert_id());
 				$this->session->set_userdata('kp_hospital_name', $data['hospital_name']);
 			}

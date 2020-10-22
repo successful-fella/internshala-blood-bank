@@ -42,6 +42,7 @@
 			$success = $this->db->insert('receiver', $data);
 			if($success) {
 				# Temprorary session, I can set permanent using Cookies.
+				session_destroy();
 				$this->session->set_userdata('kp_receiver', $this->db->insert_id());
 				$this->session->set_userdata('kp_receiver_name', $data['receiver_name']);
 			}
@@ -58,6 +59,7 @@
 			} else {
 				$password_hash = $receiver->receiver_password;
 				if(password_verify($password, $password_hash)) {
+					session_destroy();
 					$this->session->set_userdata('kp_receiver', $receiver->receiver_id);
 					$this->session->set_userdata('kp_receiver_name', $receiver->receiver_name);
 					return true;
