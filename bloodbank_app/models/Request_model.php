@@ -19,4 +19,20 @@
 							->result();
 		}
 
+		function apply($receiver_id, $sample_id) {
+			$query = $this->db->where('sample_id', $sample_id)
+							->get('blood_sample');
+			if($query->num_rows()) {
+				$data = array(
+					'receiver_id' => $receiver_id,
+					'sample_id' => $sample_id,
+					'hospital_id' => $query->row()->hospital_id,
+					'date_requested' => date('Y-m-d H:i:s')
+				);
+				return $this->db->insert('blood_request_tracker', $data);
+			} else {
+				return false;
+			}
+		}
+
 	}

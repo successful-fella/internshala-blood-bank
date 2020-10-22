@@ -1,9 +1,11 @@
 <div class="table-responsive">
-	<table class="table table-hover">
+	<table class="table table-hover text-left">
 		<thead>
 			<tr>
 				<th>Sr. No.</th>
 				<th>Receiver Name</th>
+				<th>Receiver Address</th>
+				<th>Receiver Email</th>
 				<th>Sample Requested</th>
 				<th>Sample Type</th>
 				<th>Date Requested</th>
@@ -19,10 +21,13 @@
 			<?php $sr=1; foreach($requests as $request): ?>
 				<tr>
 					<td><?= $sr ?>.</td>
-					<td><?= $request->receiver_name ?></td>
+					<td
+					><?= $request->receiver_name ?></td>
+					<td><?= $request->receiver_address ?></td>
+					<td><?= $request->receiver_contact_email ?></td>
 					<td><?= $request->sample_name ?></td>
 					<td><?= $request->sample_type . $request->sample_rhd ?></td>
-					<td><?= date_format(date_create($request->date_added), 'd/m/Y') ?></td>
+					<td><?= date_format(date_create($request->date_requested), 'H:i d/m/Y') ?></td>
 					<td>
 						<i class="text-info fa fa-check" onclick="notIncluded()" style="cursor: pointer;"></i> &nbsp;
 						<i class="text-danger fa fa-trash" onclick="notIncluded()" style="cursor: pointer;"></i>

@@ -86,7 +86,7 @@
 
 .btn-full {
 	width: 100%;
-	margin: 0;
+	margin: 0 !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -100,6 +100,14 @@
 .card-no-margin .card-body, .card-no-margin .card-footer {
 	margin: 0 !important;
 }
+
+.sample-type {
+	position: absolute;
+	font-size: 50px;
+	text-shadow: 2px 2px rgba(224, 23, 3, 0.6);
+}
+
+
 
 /* UI KIT */
 

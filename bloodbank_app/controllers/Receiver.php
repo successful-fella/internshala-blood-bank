@@ -66,8 +66,4 @@
 
 		############### END Signin Page Functions #############
 
-		function requestBlood() {
-			$this->load->view('receiver/request_blood');
-		}
-
 	}

@@ -26,7 +26,7 @@
 						</div>
 						<div class="social-description">
 							<h2><?= $delivered ?></h2>
-							<p>Samples Delivered</p>
+							<p>Sample Requests</p>
 						</div>
 						<a href="request-blood">
 							<button class="btn btn-primary btn-round btn-lg">Request Blood Sample</button>

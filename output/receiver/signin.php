@@ -110,7 +110,7 @@
 					},
 					error: () => {
 						alert('There was some error processing request, try again')
-						window.location.reload()
+						window.location.href="request-blood"
 					}
 				})
 			}
@@ -141,7 +141,7 @@
 					},
 					success: (resp) => {
 						$('#alert').toggleClass('alert-success').html('Taking you in...').slideDown()
-						window.location.reload()
+						window.location.href="request-blood"
 					},
 					error: () => {
 						alert('There was some error processing request, try again')
