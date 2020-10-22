@@ -14,8 +14,8 @@
 }
 
 .color-section {
-	background-color: #6A7ADB;
-	color: white;
+	background-color: #6A7ADB !important;
+	color: white !important;
 }
 
 .footer {
@@ -45,7 +45,61 @@
 	height: 4px;
 }
 
+.bottom-nav {
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	padding: 15px;
+}
 
+.bottom-nav .card {
+	margin-bottom: 0 !important;
+	text-align: center !important;
+}
+
+.bottom-nav .active {
+	background-color: #f96332 !important;
+}
+
+.bottom-nav .nav-link {
+	color: white !important;
+	border-radius: 12px;
+}
+
+.img-area {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+
+.img-square {
+	width: 100%;
+	height: auto;
+}
+
+.button-center {
+	width: 100%;
+	text-align: center;
+}
+
+.btn-full {
+	width: 100%;
+	margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.img-area {
+		width: 100%;
+		height: 120px;
+		overflow: hidden;
+	}
+}
+
+.card-no-margin .card-body, .card-no-margin .card-footer {
+	margin: 0 !important;
+}
 
 /* UI KIT */
 

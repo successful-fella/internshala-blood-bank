@@ -45,8 +45,32 @@
 
 		############### END Signin Page Functions #############
 
-		function requestBlood() {
-			$this->load->view('hospital/request_blood');
+
+		#################### Dashboard #######################
+
+		function listBloodSamples() {
+			$this->load->view('components/hospital/ajax_blood_sample_list');
 		}
+
+		function listRequest() {
+			$this->load->view('components/hospital/ajax_blood_sample_requests');
+		}
+
+		function dashboard() {
+			if($_SERVER['REQUEST_METHOD'] === "POST") {
+				switch ($this->input->post('action')) {
+					case 'list':
+						$this->listBloodSamples();
+						break;
+					case 'requests':
+						$this->listRequest();
+						break;
+				}
+				return;
+			}
+			$this->load->view('hospital/dashboard');
+		}
+
+		################### END Dashboard ####################
 
 	}

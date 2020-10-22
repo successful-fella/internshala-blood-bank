@@ -54,3 +54,4 @@ Clone the repository. Import blood-bank.sql, it will create new database with ta
 
 ## Notes
 > Since it says assume that it will be used by real people, I wanted to add edit profile, forgot password types feature which I didn't implemented since this is a demo assignment.
+> For frontend, I only used Now UI Kit but the page look is coded by myself.

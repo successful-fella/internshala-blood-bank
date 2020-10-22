@@ -1,6 +1,9 @@
 <footer class="footer footer-default">
 	<div class="container">
 		<nav>
+			<span>Thank you for visiting!</span>
+		</nav>
+		<nav style="float: right;">
 			<ul>
 				<li>
 					<a href="https://internshala.com" target="_blank">Internshala</a>
