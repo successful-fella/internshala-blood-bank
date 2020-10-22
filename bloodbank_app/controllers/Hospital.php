@@ -14,11 +14,32 @@
 		############### Signin Page Functions ######################
 
 		function signinNext() {
-			$this->load->view('components/hospital/signup_form');
+			$email = $this->input->post('email');
+			if($this->Hospital_model->emailExists($email)) {
+				$this->load->view('components/hospital/signin_form');
+			} else {
+				$this->load->view( 'components/hospital/signup_form', array('email' => $email) );
+			}
 		}
 
 		function actualSignin() {
-			echo "0";
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+
+			if($this->Hospital_model->verify($email, $password)) {
+				echo "1";
+			} else {
+				echo "0";
+			}
+		}
+
+		function signup() {
+			$success = $this->Hospital_model->signup($image_file);
+			if($success) {
+				http_response_code(200);
+			} else {
+				http_response_code(500);
+			}
 		}
 
 		function signin() {
@@ -31,13 +52,13 @@
 						$this->actualSignin();
 						break;
 					case 'signup':
-						$file = "";
-						if(!empty($_FILES['file']['name'])) {
-							$file = $this->Hospital_model->uploadImage();
-						}
-						echo "1";
+						$this->signUp();
 						break;
 				}
+				return;
+			}
+			if($this->Hospital_model->signedIn()) {
+				redirect('/');
 				return;
 			}
 			$this->load->view('hospital/signin');

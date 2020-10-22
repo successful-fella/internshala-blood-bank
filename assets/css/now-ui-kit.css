@@ -8,7 +8,7 @@
 	font-weight: unset;
 }
 
-#signin-button {
+#signin-button, #welcome-button {
 	cursor: pointer;
 	color: white
 }

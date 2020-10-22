@@ -66,7 +66,7 @@
 									<p>See details such as blood type, hospital and make a request by tapping request button. If you're not signed in, we will take you to signin/signup page, please do that first and then make request.</p>
 								</div>
 								<div class="tab-pane" id="step3">
-									<p>That's it! Your request will be received by Hospital! If you're an hospital staff, you can have yourself listed on our platform using signin/sigup available on navbar or click <a href="sign-in/hospital">here</a>.</p>
+									<p>That's it! Your request will be received by Hospital! <?= $this->session->kp_hospital ? "":"If you're an hospital staff, you can have yourself listed on our platform using signin/sigup available on navbar or click <a href='sign-in/hospital'>here</a>." ?></p>
 								</div>
 							</div>
 						</div>
@@ -84,7 +84,9 @@
 						<?php foreach($hospitals as $hospital): ?>
 							<div class="col-md-4 col-lg-4">
 								<div class="card">
-									<img class="card-img-top" src="<?= $hospital->hospital_feature_image ?>" onerror="this.src = 'assets/img/bghospital.webp'">
+									<div class="img-area">
+										<img class="card-img-top" src="<?= $hospital->hospital_feature_image ?>" onerror="this.src = 'assets/img/bghospital.webp'">
+									</div>
 									<div class="card-body">
 										<p class="card-title"><?= $hospital->hospital_name ?></p>
 										<p class="text-muted"><?= $hospital->hospital_address ?></p>
@@ -94,11 +96,13 @@
 						<?php endforeach; ?>
 
 					</div>
-					<div class="row justify-content-center">
-						<a href="sign-in/hospital">
-							<button class="btn btn-primary btn-lg btn-round">Sign Up as an Hospital</button>
-						</a>
-					</div>
+					<?php if(!$this->session->kp_hospital): ?>
+						<div class="row justify-content-center">
+							<a href="sign-in/hospital">
+								<button class="btn btn-primary btn-lg btn-round">Sign Up as an Hospital</button>
+							</a>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 

@@ -48,6 +48,7 @@
 			return $success;
 		}
 
+		# Verified is user trying to sign in is valid. Returns boolean
 		function verify($email, $password) {
 			$receiver = $this->db->where('receiver_contact_email', $email)
 							->get('receiver')
