@@ -7,4 +7,4 @@
 	</div>
 	<input type="password" id="form-password" class="form-control" placeholder="Password" required="">
 </div>
-<button onclick="actual_signin()" class="btn btn-primary btn-round btn-lg btn-block">Sign In</button>
+<button onclick="actual_signin()" id="form-btn" class="btn btn-primary btn-round btn-lg btn-block">Sign In</button>

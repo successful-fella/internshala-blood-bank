@@ -48,6 +48,24 @@
 			return $success;
 		}
 
+		function verify($email, $password) {
+			$receiver = $this->db->where('receiver_contact_email', $email)
+							->get('receiver')
+							->row();
+			if(empty($receiver)) {
+				return false;
+			} else {
+				$password_hash = $receiver->receiver_password;
+				if(password_verify($password, $password_hash)) {
+					$this->session->set_userdata('kp_receiver', $receiver->receiver_id);
+					$this->session->set_userdata('kp_receiver_name', $receiver->receiver_name);
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+
 		# All blood sample requested count, returns an positive integer
 		function getAllRequestedCount() {
 			return $this->db->get('blood_request_tracker')->num_rows();

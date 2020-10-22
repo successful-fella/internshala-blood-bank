@@ -23,7 +23,14 @@
 		}
 
 		private function actualSignin() {
-			echo "0";
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+
+			if($this->Receiver_model->verify($email, $password)) {
+				echo "1";
+			} else {
+				echo "0";
+			}
 		}
 
 		private function signUp() {

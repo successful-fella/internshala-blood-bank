@@ -67,4 +67,4 @@
 	</div>
 	<input type="password" id="form-password" class="form-control" placeholder="Password" required="">
 </div>
-<button onclick="signup()" class="btn btn-primary btn-round btn-lg btn-block">Sign Up</button>
+<button onclick="signup()" id="form-btn" class="btn btn-primary btn-round btn-lg btn-block">Sign Up</button>

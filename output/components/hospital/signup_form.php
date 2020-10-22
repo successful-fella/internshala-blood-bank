@@ -36,7 +36,7 @@
 <div class="no-border input-lg">
 	<input type="file" id="form-file" class="form-control" accept="image/*" onchange="previewImage(this)">
 </div>
-<button onclick="signup()" class="btn btn-primary btn-round btn-lg btn-block">Sign Up</button>
+<button onclick="signup()" ud="form-btn" class="btn btn-primary btn-round btn-lg btn-block">Sign Up</button>
 
 <script type="text/javascript">
 	$('#form-email').val(email)
