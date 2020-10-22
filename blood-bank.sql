@@ -28,7 +28,6 @@ CREATE TABLE `blood_sample` (
   `sample_name` varchar(255) NOT NULL,
   `sample_type` varchar(5) NOT NULL,
   `sample_rhd` varchar(5) NOT NULL,
-  `sample_desc` text,
   `date_added` varchar(255) NOT NULL,
   PRIMARY KEY (`sample_id`),
   KEY `hospital_id` (`hospital_id`),
@@ -42,7 +41,6 @@ CREATE TABLE `hospital` (
   `hospital_name` varchar(255) NOT NULL,
   `hospital_address` varchar(500) NOT NULL,
   `hospital_feature_image` varchar(255) DEFAULT NULL,
-  `hospital_contact_phone` bigint(20) NOT NULL,
   `hospital_contact_email` varchar(255) NOT NULL,
   `hospital_password` char(60) NOT NULL,
   `date_added` varchar(255) NOT NULL,
@@ -56,8 +54,9 @@ CREATE TABLE `receiver` (
   `receiver_id` int(11) NOT NULL AUTO_INCREMENT,
   `receiver_name` varchar(255) NOT NULL,
   `receiver_address` varchar(500) NOT NULL,
-  `receiver_contact_phone` bigint(20) NOT NULL,
   `receiver_contact_email` varchar(255) NOT NULL,
+  `receiver_blood_type` varchar(5) NOT NULL,
+  `receiver_blood_rhd` varchar(5) NOT NULL,
   `receiver_password` char(60) NOT NULL,
   `date_added` varchar(255) NOT NULL,
   PRIMARY KEY (`receiver_id`),
@@ -65,4 +64,4 @@ CREATE TABLE `receiver` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
--- 2020-10-21 07:21:43
+-- 2020-10-22 18:24:57
