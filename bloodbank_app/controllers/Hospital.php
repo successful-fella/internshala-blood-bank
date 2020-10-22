@@ -61,6 +61,7 @@
 				redirect('hospital/dashboard');
 				return;
 			}
+			session_destroy();
 			$this->load->view('hospital/signin');
 		}
 

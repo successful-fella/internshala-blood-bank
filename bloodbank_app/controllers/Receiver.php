@@ -61,6 +61,7 @@
 				redirect('/');
 				return;
 			}
+			session_destroy();
 			$this->load->view('receiver/signin');
 		}
 
