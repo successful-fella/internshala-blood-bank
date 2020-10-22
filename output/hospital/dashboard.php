@@ -31,7 +31,7 @@
 								<div class="nav-tabs-wrapper">
 									<ul class="nav" data-tabs="tabs">
 										<li class="nav-item" style="width: 33.33%">
-											<a class="nav-link active" href="#add" data-toggle="tab">Add Blood Samples</a>
+											<a class="nav-link active" href="#add" data-toggle="tab">Add Blood Info</a>
 										</li>
 										<li class="nav-item" style="width: 33.33%" onclick="loadSamplesList()">
 											<a class="nav-link" href="#list" data-toggle="tab">All Blood Samples</a>

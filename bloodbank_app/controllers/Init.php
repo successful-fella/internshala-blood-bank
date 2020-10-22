@@ -6,7 +6,17 @@
 	{
 
 		public function index() {
-			$this->load->view('home');
+			$this->load->model('Samples_model');
+			$this->load->model('Hospital_model');
+			$this->load->model('Receiver_model');
+
+			$data['samples_count'] = $this->Samples_model->getAllCount();
+			$data['hospitals_count'] = $this->Hospital_model->getAllCount();
+			$data['delivered'] = $this->Receiver_model->getAllRequestedCount();
+
+			$data['hospitals'] = $this->Hospital_model->getLast(3);
+			
+			$this->load->view('home', $data);
 		}
 
 	}

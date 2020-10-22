@@ -17,15 +17,15 @@
 					<p class="category">Internshala Blood Bank allows you to request a blood sample from trusted hospitals.</p>
 					<div class="content">
 						<div class="social-description">
-							<h2>26</h2>
+							<h2><?= $samples_count ?></h2>
 							<p>Blood Samples</p>
 						</div>
 						<div class="social-description">
-							<h2>26</h2>
+							<h2><?= $hospitals_count ?></h2>
 							<p>Hospital</p>
 						</div>
 						<div class="social-description">
-							<h2>48</h2>
+							<h2><?= $delivered ?></h2>
 							<p>Samples Delivered</p>
 						</div>
 						<a href="request-blood">
@@ -81,15 +81,17 @@
 					<h3 class="title">Hospitals With Us</h3>
 					<div class="row text-center">
 
-						<div class="col-md-4 col-lg-4">
-							<div class="card">
-								<img class="card-img-top" src="...">
-								<div class="card-body">
-									<p class="card-title">Hospital Name</p>
-									<p class="text-muted">Address</p>
+						<?php foreach($hospitals as $hospital): ?>
+							<div class="col-md-4 col-lg-4">
+								<div class="card">
+									<img class="card-img-top" src="<?= $hospital->hospital_feature_image ?>" onerror="this.src = 'assets/img/bghospital.webp'">
+									<div class="card-body">
+										<p class="card-title"><?= $hospital->hospital_name ?></p>
+										<p class="text-muted"><?= $hospital->hospital_address ?></p>
+									</div>
 								</div>
 							</div>
-						</div>
+						<?php endforeach; ?>
 
 					</div>
 					<div class="row justify-content-center">

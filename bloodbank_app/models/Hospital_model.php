@@ -5,6 +5,16 @@
 	class Hospital_model extends CI_Model
 	{
 
+		function getLast($how_many = 5) {
+			return $this->db->order_by('hospital_id')
+							->get('hospital')
+							->result_array();
+		}
+
+		function getAllCount() {
+			return $this->db->get('hospital')->num_rows();
+		}
+
 		function uploadImage() {
 			$file_name = "file";
 			$max_size = 10000000;
