@@ -119,6 +119,8 @@
 				const name = $('#form-name').val()
 				const address = $('#form-address').val()
 				const password = $('#form-password').val()
+				const blood_group = $('#form-blood-group').val()
+				const blood_rhd = $('#form-blood-rhd').val()
 				if(password == '' || name == '' || address == '') {
 					$('#alert').toggleClass('alert-danger').html('Please fill in the form').slideDown()
 					setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
@@ -133,6 +135,8 @@
 						email: email,
 						address: address,
 						password: password,
+						blood_group: blood_group,
+						blood_rhd: blood_rhd,
 						action: 'signup'
 					},
 					success: (resp) => {
