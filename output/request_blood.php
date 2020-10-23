@@ -18,7 +18,7 @@
 		<?php $this->load->view('components/nav') ?>
 
 		<div class="wrapper">
-
+			
 			<div class="section color-section">
 				<div class="container">
 					<h3 class="title">Request Blood From Various Hospitals</h3>
@@ -54,6 +54,61 @@
 					</div>
 
 				</div>
+			</div>
+
+			<div class="section">
+				<div class="container">
+					<h3 class="title" style="color: black">Eligibility Chart</h3>
+					
+					<div class="row">
+						<div class="table-responsive">
+							<table class="table table-hover text-center">
+								<thead>
+									<tr>
+										<th>If You Are</th>
+										<th>You Can Request</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>A+</td>
+										<td>A+, A-, O+, O-</td>
+									</tr>
+									<tr>
+										<td>A-</td>
+										<td>A-, O-</td>
+									</tr>
+									<tr>
+										<td>B+</td>
+										<td>B+, B-, O+, O-</td>
+									</tr>
+									<tr>
+										<td>B-</td>
+										<td>B-, O-</td>
+									</tr>
+									<tr>
+										<td>AB+</td>
+										<td>AB+, AB-, B+, B-, A+, A-, O+, O-</td>
+									</tr>
+									<tr>
+										<td>AB-</td>
+										<td>AB-, B-, A-, O-</td>
+									</tr>
+									<tr>
+										<td>O+</td>
+										<td>O+, O-</td>
+									</tr>
+									<tr>
+										<td>O-</td>
+										<td>O-</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
 
 			<?php $this->load->view('components/footer') ?>
