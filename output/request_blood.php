@@ -36,7 +36,7 @@
 										<span class="sample-type"><?= $sample->sample_type . $sample->sample_rhd ?></span>
 										<img class="card-img-top img-square" src="<?= $sample->hospital_feature_image ?>" onerror="this.src = 'assets/img/bghospital.webp'">
 									</div>
-									<div class="card-body">
+									<div class="card-body" style="height: 200px">
 										<p class="card-title"><?= $sample->sample_name ?></p>
 										<p class="text-muted"><?= $sample->hospital_name . ', ' . $sample->hospital_address ?></p>
 									</div>
