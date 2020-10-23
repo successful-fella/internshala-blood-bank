@@ -49,7 +49,7 @@ only. Please make sure you include the SQL file so that we can replicate your da
 
 
 ## Setup
-Clone the repository. Import blood-bank.sql, it will create new database with tables and populate some data. Default database username:password is set to root with password blank. To set database configurations go to bloodbank_app>config>database.php and update the values.
+Clone the repository. Import blood-bank.sql, it will create new database with empty tables. Default database username:password is set to root with password blank. To set database configurations go to bloodbank_app>config>database.php and update the values.
 
 
 ## Notes

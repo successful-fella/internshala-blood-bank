@@ -13,11 +13,14 @@ DROP TABLE IF EXISTS `blood_request_tracker`;
 CREATE TABLE `blood_request_tracker` (
   `receiver_id` int(11) NOT NULL,
   `sample_id` bigint(20) NOT NULL,
+  `hospital_id` int(11) NOT NULL,
   `date_requested` varchar(255) NOT NULL,
   UNIQUE KEY `receiver_id_sample_id` (`receiver_id`,`sample_id`),
   KEY `sample_id` (`sample_id`),
+  KEY `hospital_id` (`hospital_id`),
   CONSTRAINT `blood_request_tracker_ibfk_3` FOREIGN KEY (`receiver_id`) REFERENCES `receiver` (`receiver_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `blood_request_tracker_ibfk_4` FOREIGN KEY (`sample_id`) REFERENCES `blood_sample` (`sample_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `blood_request_tracker_ibfk_4` FOREIGN KEY (`sample_id`) REFERENCES `blood_sample` (`sample_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `blood_request_tracker_ibfk_6` FOREIGN KEY (`hospital_id`) REFERENCES `hospital` (`hospital_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -64,4 +67,4 @@ CREATE TABLE `receiver` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
--- 2020-10-22 18:24:57
+-- 2020-10-23 14:41:24
