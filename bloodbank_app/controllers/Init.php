@@ -27,13 +27,15 @@
 					echo "0";
 				} else if($this->session->kp_receiver == null) {
 					echo "1";
-				} else {
+				} else if($this->Samples_model->checkEligibility($this->session->kp_receiver, $this->input->post('sample_id'))) {
 					$success = $this->Request_model->apply($this->session->kp_receiver, $this->input->post('sample_id'));
 					if($success) {
 						echo "2";
 					} else {
 						echo "idk";
 					}
+				} else {
+					echo "3";
 				}
 				return;
 			}

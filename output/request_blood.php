@@ -84,6 +84,10 @@
 							// Okay
 							$('.btn-full').prop('disabled', false)
 							$(element).toggleClass('btn-success').prop('disabled', true).html('Sample requested!')
+						} else if(resp == '3') {
+							// Okay but can't take
+							$('.btn-full').prop('disabled', false)
+							$(element).toggleClass('btn-warning').prop('disabled', true).html("You're not eligible to request this one.")
 						} else {
 							$('.btn-full').prop('disabled', false)
 							$(element).toggleClass('btn-danger').html('Error, try again')
