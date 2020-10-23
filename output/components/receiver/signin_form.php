@@ -1,4 +1,4 @@
-<h5>Welcome back, Kawalpreet!</h5>
+<h5>Welcome back!</h5>
 <div class="input-group no-border input-lg">
 	<div class="input-group-prepend">
 		<span class="input-group-text">

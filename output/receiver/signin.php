@@ -101,7 +101,7 @@
 					success: (resp) => {
 						if(resp == 1) {
 							$('#alert').toggleClass('alert-success').html('Taking you in...').slideDown()
-							window.location.reload()
+							window.location.href="request-blood"
 						} else {
 							$('#alert').toggleClass('alert-danger').html('Invalid Password').slideDown()
 							setTimeout(() => $('#alert').toggleClass('alert-danger').slideUp(), 3000)
@@ -110,7 +110,7 @@
 					},
 					error: () => {
 						alert('There was some error processing request, try again')
-						window.location.href="request-blood"
+						window.location.reload()
 					}
 				})
 			}
