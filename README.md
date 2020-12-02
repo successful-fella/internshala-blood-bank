@@ -55,3 +55,4 @@ Clone the repository. Import blood-bank.sql, it will create new database with em
 ## Notes
 > Since it says assume that it will be used by real people, I wanted to add edit profile, forgot password types feature which I didn't implemented since this is a demo assignment.
 > For frontend, I only used Now UI Kit but the page look is coded by myself.
+> For anyone wondering my application status, I cleared assignment, technical and HR round. At last there was a meet with Mr. Vikas Shah, CTO, Internshala. He asked me about my two previous startups that I had and future goals to which I mentioned that I want to create something big after gaining experience and exposure next 4-5 years, to which, they disqualified me because they are looking for someone who will stay for longer.
